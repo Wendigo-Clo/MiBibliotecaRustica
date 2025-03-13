@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+#formulario {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    flex: 1 1 45%; /* Hace que los inputs se ajusten en filas */
+    min-width: 150px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#buscador {
+    width: 80%;
+    max-width: 400px;
+    padding: 8px;
+    margin: 15px 0;
+}
+
+#lista-libros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.libro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botones {
+    display: flex;
+    gap: 5px;
+}
+
+/* para telefonos */
+@media (max-width: 600px) {
+    #formulario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .libro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .botones {
+        margin-top: 5px;
+    }
+}
