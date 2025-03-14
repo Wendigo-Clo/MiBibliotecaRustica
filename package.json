@@ -1,20 +1,39 @@
 {
-  "name": "mibibliotecarustica",
+  "name": "mi-biblioteca-rustica",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "WendigoRu",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "35.0.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "asar": false,
+    "compression": "store",
+    "nsis": {
+    "oneClick": false
+    },
+    "appId": "com.mi.bibliotecarustica",
+    "productName": "MiBibliotecaRustica",
+    "files": [
+      "dist/**/*",
+      "frontend/**/*",
+      "main.js",
+      "database/**/*",
+      "backend/**/*"
+    ]
   }
 }

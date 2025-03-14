@@ -10,6 +10,7 @@ const db = new sqlite3.Database("../database/mibiblioteca.db");
 app.use(cors());
 app.use(bodyParser.json());
 
+
 // Obtener todos los libros
 app.get("/libros", (req, res) => {
   db.all("SELECT * FROM libros", [], (err, rows) => {

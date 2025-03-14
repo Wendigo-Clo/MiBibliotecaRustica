@@ -37,7 +37,7 @@ async function guardarLibro() {
     const prestado_a = document.getElementById("prestado_a").value || null;
 
     if (!titulo || !autorxs) {
-        alert("Título y autorxs son obligatorios.");
+        mostrarMensaje("Título y autorxs son obligatorios.");
         return;
     }
 
@@ -99,5 +99,16 @@ function buscarLibros() {
     );
     mostrarLibros(librosFiltrados);
 }
+
+function mostrarMensaje(texto) {
+    document.getElementById("mensaje-texto").innerText = texto;
+    document.getElementById("mensaje-error").style.display = "block";
+}
+
+function cerrarMensaje() {
+    document.getElementById("mensaje-error").style.display = "none";
+    document.getElementById("titulo").focus(); // Restaurar el foco manualmente
+}
+
 
 document.addEventListener("DOMContentLoaded", cargarLibros);
